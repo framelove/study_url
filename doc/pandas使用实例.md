@@ -37,3 +37,9 @@ df.loc[df['a'].str.contains('华东|华')]
 
 ```
 注意，这个‘|’是在引号内的，而不是将两个字符串分别引起来。’&‘在这里不能用。
+
+
+#### [pandas处理时间](https://blog.csdn.net/qq_22238533/article/details/77110626)
+```angular2
+
+```
