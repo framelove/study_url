@@ -12,6 +12,10 @@ data.unstack().stack()
 
 ```
 
+#### [数据的合并merge,concat,join](https://blog.csdn.net/weixin_38168620/article/details/80663892)
+```angular2
+pd.concat([a,b],axis=1)# 纵向连接，以index来合并
+```
 #### [apply函数](https://blog.csdn.net/qq_19528953/article/details/79348929)
 * apply函数是`pandas`里面所有函数中自由度最高的函数。该函数如下：
 ```buildoutcfg
