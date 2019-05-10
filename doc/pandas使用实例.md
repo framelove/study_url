@@ -47,3 +47,11 @@ df.loc[df['a'].str.contains('华东|华')]
 ```angular2
 
 ```
+
+#### [pandas去重](https://blog.csdn.net/qq_28811329/article/details/79962511)
+```angular2
+data.drop_duplicates(subset=['A','B'],keep='first',inplace=True)
+```
+> subset对应的值是列名，表示只考虑这两列，将这两列对应值相同的行进行去重。默认值为subset=None表示考虑所有列  
+> keep='first'表示保留第一次出现的重复行，是默认值。keep另外两个取值为"last"和False，分别表示保留最后一次出现的重复行和去除所有重复行。  
+> inplace=True表示直接在原来的DataFrame上删除重复项，而默认值False表示生成一个副本
