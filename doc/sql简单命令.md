@@ -10,4 +10,6 @@
 >> 想删除表,当然用 drop  
 >> 想保留表而将所有数据删除，如果和事务无关，用truncate即可  
 >> 如果和事务有关,或者想触发trigger,还是用delete。  
->> 如果是整理表内部的碎片，可以用truncate跟上reuse stroage，再重新导入/插入数据。  
+>> 如果是整理表内部的碎片，可以用truncate跟上reuse stroage，再重新导入/插入数据。
+
+* limit 10,4 = limit 4 offset 10
