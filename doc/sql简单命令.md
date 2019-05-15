@@ -13,3 +13,5 @@
 >> 如果是整理表内部的碎片，可以用truncate跟上reuse stroage，再重新导入/插入数据。
 
 * limit 10,4 = limit 4 offset 10
+
+* join后有多个条件时，多余的条件可以写在where中
