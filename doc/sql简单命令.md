@@ -15,3 +15,12 @@
 * limit 10,4 = limit 4 offset 10
 
 * join后有多个条件时，多余的条件可以写在where中
+
+* [group by聚合函数](https://www.cnblogs.com/geaozhang/p/6745147.html)
+
+
+* 看表结构
+```angular2
+show full columns from tablename # 查看表的字段注释
+show create table tablename # 查看表的创建语句
+```
