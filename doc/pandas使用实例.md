@@ -3,6 +3,19 @@ pandas中的层次化索引使我们能以低纬度形式处理高纬度数据
 ```buildoutcfg
 data.unstack().stack()
 ```
+#### [数据重塑](https://blog.csdn.net/wj1066/article/details/82261458)
+> df.pivot() # 将列数据转化为多维数据
+```angular2
+# 调用pivot方法前需要保证数据集中不存在重复条目
+df.pivot(index='列名',columns='列名',values='列名')# 不写values怎会返回层次化索引的全部
+
+# pivot_table()
+df.pivot_table(index='列名',columns='列名',values='列名',aggfunc='')#aggfunc参数用于指明转换时所需的汇总函数
+```
+> df.melt() # 与pivot()相反，将高纬度数据转化为列数据
+```angular2
+df.melt(id_vars=['保留的列名'],value_vars=['变为值的列名'],var_name='变为值的列后的列名',value_name=)
+```
 
 #### [groupby的索引和迭代](https://blog.csdn.net/leonis_v/article/details/51832916)
 * groupby对象是一个迭代对象，每次迭代结果是一个元组，
