@@ -24,3 +24,5 @@
 show full columns from tablename # 查看表的字段注释
 show create table tablename # 查看表的创建语句
 ```
+
+* [多个字段的in 和 not in 及其替代写法（exists，not exists）](https://blog.csdn.net/weixin_41287692/article/details/80049631)

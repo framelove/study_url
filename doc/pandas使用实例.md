@@ -29,6 +29,10 @@ df.melt(id_vars=['保留的列名'],value_vars=['变为值的列名'],var_name='
 ```angular2
 pd.concat([a,b],axis=1)# 纵向连接，以index来合并
 ```
+#### [数据合并merge](https://blog.csdn.net/brucewong0516/article/details/82707492)
+```angular2
+pd.merge(left, right, left_on='key', right_index=True, how='left', sort=False)
+```
 #### [apply函数](https://blog.csdn.net/qq_19528953/article/details/79348929)
 * apply函数是`pandas`里面所有函数中自由度最高的函数。该函数如下：
 ```buildoutcfg
