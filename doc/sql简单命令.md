@@ -26,3 +26,9 @@ show create table tablename # 查看表的创建语句
 ```
 
 * [多个字段的in 和 not in 及其替代写法（exists，not exists）](https://blog.csdn.net/weixin_41287692/article/details/80049631)
+
+
+* [group_concat](https://www.cnblogs.com/rxhuiu/p/9134009.html)
+```angular2
+group_concat( [distinct] 要连接的字段 [order by 排序字段 asc/desc  ] [separator '分隔符'] )
+```
