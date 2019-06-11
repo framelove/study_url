@@ -31,4 +31,10 @@ show create table tablename # 查看表的创建语句
 * [group_concat](https://www.cnblogs.com/rxhuiu/p/9134009.html)
 ```angular2
 group_concat( [distinct] 要连接的字段 [order by 排序字段 asc/desc  ] [separator '分隔符'] )
+group_concat(
+	concat_ws(
+	'-',
+	a.ftype,
+	b.NAME,
+	bb.NAME))
 ```
