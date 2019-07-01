@@ -20,7 +20,7 @@
 
 
 * 看表结构
-```angular2
+```
 show full columns from tablename # 查看表的字段注释
 show create table tablename # 查看表的创建语句
 ```
@@ -29,7 +29,7 @@ show create table tablename # 查看表的创建语句
 
 
 * [group_concat](https://www.cnblogs.com/rxhuiu/p/9134009.html)
-```angular2
+```
 group_concat( [distinct] 要连接的字段 [order by 排序字段 asc/desc  ] [separator '分隔符'] )
 group_concat(
 	concat_ws(
@@ -37,4 +37,19 @@ group_concat(
 	a.ftype,
 	b.NAME,
 	bb.NAME))
+```
+
+### 更新增量数据
+### 
+* 如果记录存在则更新/如果不存在则插入[INSERT ON DUPLICATE KEY UPDATE](https://cloud.tencent.com/developer/article/1375845)
+```mysql
+insert into
+   Shops(shopid, viewtotal)  
+values(1,123456),  
+(2, 234567), 
+(3, 345678) 
+on duplicate key update
+  shopid = values(shopid), 
+  viewtotal = values(viewtotal)
+
 ```
