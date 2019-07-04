@@ -38,7 +38,7 @@ group_concat(
 	b.NAME,
 	bb.NAME))
 ```
-
+* [mysql远程连接后本地连接不上](https://blog.csdn.net/qq_38709999/article/details/86554619)
 ### 更新增量数据
 ### 
 * 如果记录存在则更新/如果不存在则插入[INSERT ON DUPLICATE KEY UPDATE](https://cloud.tencent.com/developer/article/1375845)
