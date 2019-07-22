@@ -24,6 +24,7 @@ systemctl status firewalld.service
 ###3. [完全分布式集群(单点）](https://www.cnblogs.com/frankdeng/p/9047698.html)
 
 > [（舍弃）（安装hadoop及配置文件](https://segmentfault.com/a/1190000011832566)
+>> Namenode和ResourceManger如果不是同一台机器，不能在NameNode上启动 yarn，应该在ResouceManager所在的机器上启动yarn
 ```
 
 ```
