@@ -31,6 +31,33 @@ show create table tablename # 查看表的创建语句
 * sql执行顺序
 > from ...on...join...where...group by...having...select distinct...order by...limit
 
+
+* [group_concat](https://www.cnblogs.com/rxhuiu/p/9134009.html)
+```
+group_concat( [distinct] 要连接的字段 [order by 排序字段 asc/desc  ] [separator '分隔符'] )
+group_concat(
+	concat_ws(
+	'-',
+	a.ftype,
+	b.NAME,
+	bb.NAME))
+```
+* [mysql远程连接后本地连接不上](https://blog.csdn.net/qq_38709999/article/details/86554619)
+### 更新增量数据
+### 
+* 如果记录存在则更新/如果不存在则插入[INSERT ON DUPLICATE KEY UPDATE](https://cloud.tencent.com/developer/article/1375845)
+```mysql
+insert into
+   Shops(shopid, viewtotal)  
+values(1,123456),  
+(2, 234567), 
+(3, 345678) 
+on duplicate key update
+  shopid = values(shopid), 
+  viewtotal = values(viewtotal)
+
+```
+
 * SQL优化，主要就是在 优化索引
 > 索引：相当于书的目录  
 > 索引：index是帮助MYSQL高效获取数据的数据结构。树（B树、hash树）

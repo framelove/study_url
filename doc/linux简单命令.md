@@ -6,3 +6,15 @@
 * 查看后台程序是否运行
 > ps -def | grep python
 
+### [安装mysql](https://www.cnblogs.com/gradven/p/5023734.html)
+> 设置开放用户远程连接
+```mysql
+mysql -u root -proot
+use mysql;
+update user set host = '%' where user = 'root';
+select host, user from user;
+
+flush privileges; # 刷新权限，这一步十分重要！
+```
+
+
