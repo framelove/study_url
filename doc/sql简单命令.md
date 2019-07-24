@@ -20,7 +20,7 @@
 
 
 * 看表结构
-```angular2
+```
 show full columns from tablename # 查看表的字段注释
 show create table tablename # 查看表的创建语句
 ```
@@ -46,7 +46,7 @@ group_concat(
 ### 更新增量数据
 ### 
 * 如果记录存在则更新/如果不存在则插入[INSERT ON DUPLICATE KEY UPDATE](https://cloud.tencent.com/developer/article/1375845)
-```mysql
+```
 insert into
    Shops(shopid, viewtotal)  
 values(1,123456),  
