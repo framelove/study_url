@@ -26,3 +26,11 @@ show create table tablename # 查看表的创建语句
 ```
 
 * [多个字段的in 和 not in 及其替代写法（exists，not exists）](https://blog.csdn.net/weixin_41287692/article/details/80049631)
+* sql编写过程
+> select...from...join...on...where...group by...having...order by...limit
+* sql执行顺序
+> from ...on...join...where...group by...having...select distinct...order by...limit
+
+* SQL优化，主要就是在 优化索引
+> 索引：相当于书的目录  
+> 索引：index是帮助MYSQL高效获取数据的数据结构。树（B树、hash树）
