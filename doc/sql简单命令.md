@@ -14,7 +14,8 @@
 
 * limit 10,4 = limit 4 offset 10
 
-* join后有多个条件时，多余的条件可以写在where中
+* join后有多个条件时，多余的条件可以写在where中（X)
+> 把条件写到where中会有一些问题，比如说on字段为空的一些数据就显示不出来了。
 
 * [group by聚合函数](https://www.cnblogs.com/geaozhang/p/6745147.html)
 
@@ -61,3 +62,5 @@ on duplicate key update
 * SQL优化，主要就是在 优化索引
 > 索引：相当于书的目录  
 > 索引：index是帮助MYSQL高效获取数据的数据结构。树（B树、hash树）
+
+* 条件过滤时（where),如果用到一些值为null的字段，容易将它们过滤掉
