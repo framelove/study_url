@@ -25,7 +25,24 @@
 show full columns from tablename # 查看表的字段注释
 show create table tablename # 查看表的创建语句
 ```
-
+* [看数据库中所有表的注释](https://www.cnblogs.com/xphdbky/p/7047878.html)
+```mysql
+#查询所有表的注释和字段注释
+SELECT
+a.table_name 表名,
+a.table_comment 表说明,
+b.COLUMN_NAME 字段名,
+b.column_comment 字段说明,
+b.column_type 字段类型,
+b.column_key 约束
+FROM
+information_schema. TABLES a
+LEFT JOIN information_schema. COLUMNS b ON a.table_name = b.TABLE_NAME
+WHERE
+a.table_schema = '数据库'
+ORDER BY
+a.table_name
+```
 * [多个字段的in 和 not in 及其替代写法（exists，not exists）](https://blog.csdn.net/weixin_41287692/article/details/80049631)
 * sql编写过程
 > select...from...join...on...where...group by...having...order by...limit
@@ -58,9 +75,12 @@ on duplicate key update
   viewtotal = values(viewtotal)
 
 ```
+> 如果你插入的记录导致UNIQUE索引重复，那么就会认为该条记录存在，则执行update语句而不是insert语句，反之，则执行insert语句而不是更新语句。
 
 * SQL优化，主要就是在 优化索引
 > 索引：相当于书的目录  
 > 索引：index是帮助MYSQL高效获取数据的数据结构。树（B树、hash树）
 
 * 条件过滤时（where),如果用到一些值为null的字段，容易将它们过滤掉
+
+* 存储过程
