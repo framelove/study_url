@@ -44,6 +44,9 @@ ORDER BY
 a.table_name
 ```
 * [多个字段的in 和 not in 及其替代写法（exists，not exists）](https://blog.csdn.net/weixin_41287692/article/details/80049631)
+* [in,not in与exists,not exists的对比](https://blog.csdn.net/dingweiye123/article/details/81005470)
+> exists用来判断查询到的结果是否为空，它并不返回任何值，not exists也是一样
+* [not in优化](https://blog.csdn.net/pcwblover008/article/details/80015855)
 * sql编写过程
 > select...from...join...on...where...group by...having...order by...limit
 * sql执行顺序

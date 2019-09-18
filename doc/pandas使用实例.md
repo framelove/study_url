@@ -21,8 +21,10 @@ df.melt(id_vars=['保留的列名'],value_vars=['变为值的列名'],var_name='
 * groupby对象是一个迭代对象，每次迭代结果是一个元组，
 元组的第一个元素是还组的名称(就是groupby列的元素名称),第二个元素是该组的具体信息，是
 一个dataframe，索引是以前dataframe的总索引。
-```buildoutcfg
-
+* groupby agg的使用，不同的列使用不同的分组计算
+```
+num_agg = {'Age':['min', 'mean', 'max'], 'Income':['min', 'max']}
+print(df.groupby('Country').agg(num_agg))
 ```
 
 #### [数据的合并merge,concat,join](https://blog.csdn.net/weixin_38168620/article/details/80663892)
