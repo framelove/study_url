@@ -1,11 +1,11 @@
 #### [层次化索引](https://www.jianshu.com/p/efab7d81c0ab)
 pandas中的层次化索引使我们能以低纬度形式处理高纬度数据
-```buildoutcfg
+```
 data.unstack().stack()
 ```
 #### [数据重塑](https://blog.csdn.net/wj1066/article/details/82261458)
 > df.pivot() # 将列数据转化为多维数据
-```angular2
+```
 # 调用pivot方法前需要保证数据集中不存在重复条目
 df.pivot(index='列名',columns='列名',values='列名')# 不写values怎会返回层次化索引的全部
 
@@ -13,7 +13,7 @@ df.pivot(index='列名',columns='列名',values='列名')# 不写values怎会返
 df.pivot_table(index='列名',columns='列名',values='列名',aggfunc='')#aggfunc参数用于指明转换时所需的汇总函数
 ```
 > df.melt() # 与pivot()相反，将高纬度数据转化为列数据
-```angular2
+```
 df.melt(id_vars=['保留的列名'],value_vars=['变为值的列名'],var_name='变为值的列后的列名',value_name=)
 ```
 
@@ -22,27 +22,36 @@ df.melt(id_vars=['保留的列名'],value_vars=['变为值的列名'],var_name='
 元组的第一个元素是还组的名称(就是groupby列的元素名称),第二个元素是该组的具体信息，是
 一个dataframe，索引是以前dataframe的总索引。
 * groupby agg的使用，不同的列使用不同的分组计算
+* groupby分组会把分组依据列变成索引，这里用reset_index方法重置索引。
+
 ```
 num_agg = {'Age':['min', 'mean', 'max'], 'Income':['min', 'max']}
 print(df.groupby('Country').agg(num_agg))
 ```
 
 #### [数据的合并merge,concat,join](https://blog.csdn.net/weixin_38168620/article/details/80663892)
-```angular2
+```
 pd.concat([a,b],axis=1)# 纵向连接，以index来合并
 ```
+
+> pd.concat在循环中横向合并dataframe时，性能太差！  
+> 用dataframe---> dict ----->dataframe.
+```python
+
+```
+
 #### [数据合并merge](https://blog.csdn.net/brucewong0516/article/details/82707492)
-```angular2
+```
 pd.merge(left, right, left_on='key', right_index=True, how='left', sort=False)
 ```
 #### [apply函数](https://blog.csdn.net/qq_19528953/article/details/79348929)
 * apply函数是`pandas`里面所有函数中自由度最高的函数。该函数如下：
-```buildoutcfg
+```
 DataFrame.apply(func, axis=0, broadcast=False, raw=False, reduce=None, args=(), **kwds
 ```
 #### [pandas数据筛选](https://www.jianshu.com/p/805f20ac6e06)
 * 如果要选择某列等于多个数值或者字符串时，要用到.isin()， 我们把df修改了一下（isin()括号里面应该是个list）
-```buildoutcfg
+```
 df[(df['a']>20) | (df['b']>100)]
 # 使用 &（且） 和 |（或） 时每个条件都要用小括号括起来
 
@@ -66,12 +75,12 @@ data2 = data[~data['客户等级'].isin([0])]
 
 
 #### [pandas处理时间](https://blog.csdn.net/qq_22238533/article/details/77110626)
-```angular2
+```
 
 ```
 
 #### [pandas去重](https://blog.csdn.net/qq_28811329/article/details/79962511)
-```angular2
+```
 data.drop_duplicates(subset=['A','B'],keep='first',inplace=True)
 ```
 > subset对应的值是列名，表示只考虑这两列，将这两列对应值相同的行进行去重。默认值为subset=None表示考虑所有列  
